@@ -71,11 +71,13 @@ What happen to the data?
 
 8.1 Integers from 1 to 100
 ```{r}
-seq(1:100)
+hundred <- seq(1:100)
+hundred
 ```
 8.2 Numbers from 20 to 60
 ```{r}
-seq(20,60)
+num <- seq(20,60)
+num
 ```
 8.3 Mean of numbers from 20 to 60
 ```{r}
@@ -85,7 +87,7 @@ mean(20:60)
 ```{r}
 sum(51:91)
 ```
-8.5 Integers from1 to 1,000
+8.5 Integers from 1 to 1,000
 Code and Output from 8.1 to 8.4
 ```{r}
 thousands <- seq(1:1000)
@@ -93,13 +95,12 @@ thousands
 ```
 a. Data Points from 8.1 to 8.4?
 ```{r}
-length(seq) + length(mean) + length(sum)
+length(hundred) + length(mean) + length(sum)
 ```
 
 
 c. Maximum Data Points until 10
-
-max 
+max(thousands[thousands <- 10])
 
 9. Filter
 ```{r}

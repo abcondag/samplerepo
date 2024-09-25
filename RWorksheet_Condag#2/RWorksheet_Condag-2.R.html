@@ -395,19 +395,20 @@ total.</li>
 <ol style="list-style-type: lower-alpha">
 <li>Access 3rd element, what is the value?</li>
 </ol>
-<pre class="r"><code>print(paste(workers[[3]], &quot;is the value of the 3rd element&quot;))</code></pre>
-<pre><code>## [1] &quot;22 is the value of the 3rd element&quot;</code></pre>
+<pre class="r"><code>workers[[3]]</code></pre>
+<pre><code>## [1] 22</code></pre>
 <ol start="2" style="list-style-type: lower-alpha">
 <li>Access 2nd and 4th element, what are the values?</li>
 </ol>
-<pre class="r"><code>print(paste(workers[[2]], &quot;is the 2nd element and&quot;, workers[[4]], &quot;is the 4th element&quot;))</code></pre>
-<pre><code>## [1] &quot;28 is the 2nd element and 36 is the 4th element&quot;</code></pre>
+<pre class="r"><code>workers[[2]]</code></pre>
+<pre><code>## [1] 28</code></pre>
+<pre class="r"><code>workers[[4]]</code></pre>
+<pre><code>## [1] 36</code></pre>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Access all but the 4th and 12th element is not included. Write the R
 script and its output.</li>
 </ol>
-<pre class="r"><code>exclude &lt;- workers[-c(4, 12)]
-exclude</code></pre>
+<pre class="r"><code>workers[-c(4, 12)]</code></pre>
 <pre><code>## [[1]]
 ## [1] 34
 ## 
@@ -555,7 +556,10 @@ exclude</code></pre>
 <li>Create a vector x &lt;- c(“first”=3, “second”=0, “third”=9). Then
 named the vector, names(x).</li>
 </ol>
-<pre class="r"><code>x &lt;- c(&quot;first&quot; = 3, &quot;second&quot; = 0, &quot;third&quot; = 9)</code></pre>
+<pre class="r"><code>x &lt;- c(&quot;first&quot; = 3, &quot;second&quot; = 0, &quot;third&quot; = 9)
+x</code></pre>
+<pre><code>##  first second  third 
+##      3      0      9</code></pre>
 <p>a &amp; b. Print the results. Then access x[c(“first”, “third”)].</p>
 <pre class="r"><code>x</code></pre>
 <pre><code>##  first second  third 
@@ -708,13 +712,53 @@ power_ranking</code></pre>
 file(PowerRanking). Import the csv file into the RStudio. What is the R
 script?</li>
 </ol>
-<pre class="r"><code>forbes_data &lt;- read.csv(&quot;PowerRanking.csv&quot;)</code></pre>
+<pre class="r"><code>forbes_data &lt;- read.csv(&quot;PowerRanking.csv&quot;)
+print(forbes_data)</code></pre>
+<pre><code>##    Power_Ranking      Celebrity_Names Pay
+## 1              1           Tom Cruise  67
+## 2              2       Rolling Stones  90
+## 3              3        Oprah Winfrey 225
+## 4              4                   U2 110
+## 5              5          Tiger Woods  90
+## 6              6     Steven Spielberg 332
+## 7              7         Howard Stern 302
+## 8              8              50 Cent  41
+## 9              9 Cast of the Sopranos  52
+## 10            10            Dan Brown  88
+## 11            11    Bruce Springsteen  55
+## 12            12         Donald Trump  44
+## 13            13         Muhammad Ali  55
+## 14            14       Paul McCartney  40
+## 15            15         George Lucas 233
+## 16            16           Elton John  34
+## 17            17      David Letterman  40
+## 18            18       Phil Mickelson  47
+## 19            19         J.K. Rowling  75
+## 20            20           Bradd Pitt  25
+## 21            21        Peter Jackson  39
+## 22            22      Dr. Phil McGraw  45
+## 23            23             Jay Leno  32
+## 24            24          Celine Dion  40
+## 25            25          Kobe Bryant  31</code></pre>
 <ol start="4" style="list-style-type: lower-alpha">
 <li>Access the rows 10 to 20 and save it as Ranks.RData. Write the R
 script and its output.</li>
 </ol>
 <pre class="r"><code>ranks &lt;- forbes_data[10:20, ]
-save(ranks, file = &quot;Ranks.RData&quot;)</code></pre>
+save(ranks, file = &quot;Ranks.RData&quot;)
+print(ranks)</code></pre>
+<pre><code>##    Power_Ranking   Celebrity_Names Pay
+## 10            10         Dan Brown  88
+## 11            11 Bruce Springsteen  55
+## 12            12      Donald Trump  44
+## 13            13      Muhammad Ali  55
+## 14            14    Paul McCartney  40
+## 15            15      George Lucas 233
+## 16            16        Elton John  34
+## 17            17   David Letterman  40
+## 18            18    Phil Mickelson  47
+## 19            19      J.K. Rowling  75
+## 20            20        Bradd Pitt  25</code></pre>
 <ol start="5" style="list-style-type: lower-alpha">
 <li><p>Describe its output</p>
 <p>The output table containing rows 10 to 20. This includes the

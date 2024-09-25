@@ -67,7 +67,6 @@ library(openxlsx)
 vienna <- read.xlsx("hotels-vienna.xlsx")
 dim(vienna)
 selcol <- vienna[, c("country", "neighbourhood", "price", "stars", "accommodation_type", "rating")]
-print(selcol)
 save(selcol, file = "new.RData")
 load("new.RData")
 head(selcol)

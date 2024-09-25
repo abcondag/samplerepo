@@ -175,7 +175,6 @@ dim(vienna)
 c. Select columns country, neighbourhood, price, stars, accomodation_type, and ratings.
 ```{r}
 selcol <- vienna[, c("country", "neighbourhood", "price", "stars", "accommodation_type", "rating")]
-print(selcol)
 ```
 d. Save the data as **new.RData to your RStudio.
 ```{r}

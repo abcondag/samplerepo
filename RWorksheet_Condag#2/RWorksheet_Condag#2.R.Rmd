@@ -45,21 +45,22 @@ workers <- list(34, 28, 22, 36, 27, 18, 52, 39, 42, 29, 35, 31, 27, 22, 37, 34, 
 
 a. Access 3rd element, what is the value?
 ```{r}
-print(paste(workers[[3]], "is the value of the 3rd element"))
+workers[[3]]
 ```
 b. Access 2nd and 4th element, what are the values?
 ```{r}
-print(paste(workers[[2]], "is the 2nd element and", workers[[4]], "is the 4th element"))
+workers[[2]]
+workers[[4]]
 ```
 c. Access all but the 4th and 12th element is not included. Write the R script and its output.
 ```{r}
-exclude <- workers[-c(4, 12)]
-exclude
+workers[-c(4, 12)]
 ```
 
 4. Create a vector x <- c("first"=3, "second"=0, "third"=9). Then named the vector, names(x).
 ```{r}
 x <- c("first" = 3, "second" = 0, "third" = 9)
+x
 ```
 a & b. Print the results. Then access x[c("first", "third")].
 ```{r}
@@ -147,11 +148,13 @@ pay
 c. Create an excel file from the table above and save it as csv file(PowerRanking). Import the csv file into the RStudio. What is the R script?
 ```{r}
 forbes_data <- read.csv("PowerRanking.csv")
+print(forbes_data)
 ```
 d. Access the rows 10 to 20 and save it as Ranks.RData. Write the R script and its output.
 ```{r}
 ranks <- forbes_data[10:20, ]
 save(ranks, file = "Ranks.RData")
+print(ranks)
 ```
 e. Describe its output
 
@@ -172,6 +175,7 @@ dim(vienna)
 c. Select columns country, neighbourhood, price, stars, accomodation_type, and ratings.
 ```{r}
 selcol <- vienna[, c("country", "neighbourhood", "price", "stars", "accommodation_type", "rating")]
+print(selcol)
 ```
 d. Save the data as **new.RData to your RStudio.
 ```{r}

@@ -9,10 +9,10 @@ seq2 <- seq(1, 3, by = 0.2)
 seq2
 
 #NUMBER_3
-print(paste(workers[[3]], "is the value of the 3rd element"))
-print(paste(workers[[2]], "is the 2nd element and", workers[[4]], "is the 4th element"))
-exclude <- workers[-c(4, 12)]
-exclude
+workers[[3]]
+workers[[2]]
+workers[[4]]
+workers[-c(4, 12)]
 
 #NUMBER_4
 x
@@ -57,14 +57,17 @@ power_ranking
 celebrity_name
 pay
 forbes_data <- read.csv("PowerRanking.csv")
+print(forbes_data)
 ranks <- forbes_data[10:20, ]
 save(ranks, file = "Ranks.RData")
+print(ranks)
 
 #NUMBER_9
 library(openxlsx)
 vienna <- read.xlsx("hotels-vienna.xlsx")
 dim(vienna)
 selcol <- vienna[, c("country", "neighbourhood", "price", "stars", "accommodation_type", "rating")]
+print(selcol)
 save(selcol, file = "new.RData")
 load("new.RData")
 head(selcol)

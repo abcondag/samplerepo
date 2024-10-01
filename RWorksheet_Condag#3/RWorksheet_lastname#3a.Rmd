@@ -1,0 +1,98 @@
+---
+title: "RWorksheet_Condag#3a"
+author: "Angel Blase"
+date: "2024-10-01"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#USING VECTORS
+
+1. There is a built-in vector LETTERS contains the uppercase letters of the alphabet and letters which contains the lowercase letters of the alphabet.
+```{r}
+LETTERS
+letters
+```
+
+Based on the above vector LETTERS:
+
+a. You need to produce a vector that contains the first 11 letters.
+```{r}
+first_eleven <- LETTERS[1:11]
+first_eleven
+```
+
+b. Produce a vector that contains the odd numbered letters.
+```{r}
+odd_numbered_letters <- LETTERS[seq(1, 26, by=2)]
+odd_numbered_letters
+```
+
+c. Produce a vector that contains the vowels
+```{r}
+vowels <- LETTERS[LETTERS %in% c("A", "E", "I", "O", "U")]
+vowels
+```
+
+Based on the above vector letters:
+
+d. Produce a vector that contains the last 5 lowercase letters.
+```{r}
+last_five <- letters[22:26]
+last_five
+```
+
+e. Produce a vector that contains letters between 15 to 24 letters in lowercase.
+```{r}
+letters_15_to_24 <- letters[15:24]
+letters_15_to_24
+```
+
+2. Create a vector(not a dataframe) with the average temperatures in April for Tuguegarao City, Manila, Iloilo City, Tacloban, Samal Island, and Davao City. The average temperatures in Celcius are 42, 39, 34, 34, 30, and 27 degrees.
+
+a. Creating a character vector for the cities.
+```{r}
+city <- c("Tuguegarao City", "Manila", "Iloilo City", "Tacloban", "Samal Island", "Davao City")
+city
+```
+
+b. Creating a numeric vector for the average temperatures.
+```{r}
+temp <- c(42, 39, 34, 34, 30, 27)
+temp
+```
+
+c. Create a dataframe to combine the city and temp
+```{r}
+city_temp <- data.frame(city, temp)
+city_temp
+```
+
+d. Rename the columns using names() to "City" and "Temperature".
+```{r}
+names(city_temp) <- c("City", "Temperature")
+city_temp
+```
+
+e. Print the structure by using str() function. Describe the output.
+```{r}
+str(city_temp)
+```
+
+f. From the answer in d, what is the content of row 3 and row 4?
+```{r}
+city_temp[3:4, ]
+```
+
+g. From the answer in d, display the city with highest temperature and the city with the lowest temperature.
+```{r}
+highest_temp <- city_temp[which.max(city_temp$Temperature), ]
+highest_temp
+
+lowest_temp <- city_temp[which.min(city_temp$Temperature), ]
+lowest_temp
+```
+
